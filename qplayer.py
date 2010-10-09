@@ -305,14 +305,14 @@ class Player(QtGui.QMainWindow):
 				#	self.selectedLen-=1
 				for i in elements:
 					if i>b:
-						self.connection.client.move(i+iterator,b-iterator)
+						self.connection.client.move(iterator,b-iterator)
 					else:
 						self.connection.client.move(i,b)
-					iterator-=1
+					iterator+=1
 				self.connection.manualPlaylistUpdate()
 
 		else:
-			self.selectedLen-=1
+			self.selectedLen+=1
 			
 	def on_treeWidget_2_itemActivated(self,e):
 		self.connection.sthchanging=True
